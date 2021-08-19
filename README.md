@@ -12,8 +12,10 @@ made by false#6000
 1. Create a bot and grab its token - [Discord Bot](https://discord.com/developers/applications)
 2. Open secrets.json and put in your bot token where it says "token"
 3. While secrets.json is open put in your mongodb conncetion url
-4. Double click the python file "Bot is online." should print to terminal
-5. Enjoy!
+4. Open queue.py and scroll down and put your category ID where it says "your_category_id"
+5. Make the category permission veiw_channels off
+6. Double click the python file "Bot is online." should print to terminal
+7. Enjoy!
 
 # 24/7 Hosting (OPTIONAL)
 Would you like to keep the bot on 24/7? I have some websites that can help you with that.
