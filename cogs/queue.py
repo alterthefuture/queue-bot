@@ -85,7 +85,7 @@ class queuecommands(commands.Cog):
 
                 await ctx.send(embed=embed)
 
-                category_id = 872711854617657366
+                category_id = your_category_id
 
                 for category in ctx.guild.categories:
                     if category.id == category_id:
