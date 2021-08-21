@@ -1,7 +1,7 @@
 # queue-bot
 An open source discord.py queue system bot that uses a database!
 
-made by CatNinja#0001
+made by alter#6000
 
 # Requirements 
 * Python recommended latest version - https://www.python.org/
