@@ -19,17 +19,17 @@ class queuecommands(commands.Cog):
                 await ctx.guild.create_role(name="registered",colour=discord.Colour(0x00FF00))
 
                 embed=discord.Embed(description=f"Successfully setup queue system and roles.",color=discord.Color.green())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
             except:
                 embed=discord.Embed(description=f"Failed to setup queue system and roles.",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
         else:
             embed=discord.Embed(description=f"You have to be server owner to run this command.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
 
@@ -50,12 +50,12 @@ class queuecommands(commands.Cog):
                 return await ctx.author.edit(nick=f"[{points}] {ctx.author.name}")
             except:
                 embed=discord.Embed(description=f"{ctx.author.mention} I have failed to register you, please try again later.",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
         else:
             embed=discord.Embed(description=f"{ctx.author.mention} you are already registered.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
 
@@ -66,13 +66,13 @@ class queuecommands(commands.Cog):
 
         if not data:
             embed=discord.Embed(description=f"{ctx.author.mention} you're not registered, please register first.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
         else:
             if ctx.author in qplayers:
                 embed=discord.Embed(description=f"{ctx.author.mention} you are already in a queue, please be patient.",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 await ctx.send(embed=embed)
                 return
@@ -81,7 +81,7 @@ class queuecommands(commands.Cog):
 
             if len(qplayers) == 2:
                 embed=discord.Embed(description=f"Queue is full, setting up channel...",color=discord.Color.blue())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 await ctx.send(embed=embed)
 
@@ -97,7 +97,7 @@ class queuecommands(commands.Cog):
                 await game_channel.set_permissions(qplayers[1], read_messages=True,send_messages=True)
 
                 embed=discord.Embed(title="Match Found!",description=f"Match has been found, please meetup and begin the fight.\n\n**COMMANDS**\n`;win [@user]` - Decides who wins **(ADMIN ONLY)**\n`;lose [@user]` - Decides who loses **(ADMIN ONLY)**\n`;close` - Ends game and deletes channel **(ADMIN ONLY)**\n\n**MATCH DETAILS**\nCreation Time: **{datetime.datetime.utcnow()}**\nPlayers: **{qplayers[0]}** vs **{qplayers[1]}**", color=discord.Color.blue())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 await game_channel.send(f"{qplayers[0].mention} and {qplayers[1].mention} , game has been found get ready.",embed=embed) 
 
@@ -105,7 +105,7 @@ class queuecommands(commands.Cog):
                 return qplayers.clear()
             else:
                 embed=discord.Embed(description=f"**[{len(qplayers)}/2]** {ctx.author.mention} has joined queue.",color=discord.Color.green())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
     
@@ -116,7 +116,7 @@ class queuecommands(commands.Cog):
 
         if not data:
             embed=discord.Embed(description=f"{ctx.author.mention} you're not registered, please register first.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
         else:
@@ -124,14 +124,14 @@ class queuecommands(commands.Cog):
                 try:
                     qplayers.remove(ctx.author)
                     embed=discord.Embed(description=f"**[{len(qplayers)}/2]** {ctx.author.mention} has left queue",color=discord.Color.green())
-                    embed.set_footer(text="Bot Created By alter#6000")
+                    embed.set_footer(text="Bot Created By ritz#8888")
 
                     return await ctx.send(embed=embed)
                 except:
                     pass
             elif ctx.author not in qplayers:
                 embed=discord.Embed(description=f"{ctx.author.mention} you are not in queue, join queue first.",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
             else:
@@ -144,7 +144,7 @@ class queuecommands(commands.Cog):
     
         if not data:
             embed=discord.Embed(description=f"{member.mention} is not registered, please register first.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
         else:
@@ -154,7 +154,7 @@ class queuecommands(commands.Cog):
                 await self.bot.config.upsert({"_id": member.id, "points": new_amount})
 
                 embed=discord.Embed(description=f"{member.mention} won 5 points.",color=discord.Color.green())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 await ctx.send(embed=embed)
 
@@ -164,7 +164,7 @@ class queuecommands(commands.Cog):
                 return await member.edit(nick=f"[{points}] {member.name}")
             except:
                 embed=discord.Embed(description=f"Failed to give {member.mention} 5 points.",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
     
@@ -175,7 +175,7 @@ class queuecommands(commands.Cog):
         
         if not data:
             embed=discord.Embed(description=f"{member.mention} is not registered, please register first.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
         else:
@@ -184,14 +184,14 @@ class queuecommands(commands.Cog):
             try:
                 if data["points"] == 0:
                     embed=discord.Embed(description=f"{member.mention} has no points.",color=discord.Color.red())
-                    embed.set_footer(text="Bot Created By alter#6000")
+                    embed.set_footer(text="Bot Created By ritz#8888")
 
                     return await ctx.send(embed=embed)
                 else:
                     await self.bot.config.upsert({"_id": member.id, "points": new_amount})
 
                     embed=discord.Embed(description=f"{member.mention} lost 5 points.",color=discord.Color.green())
-                    embed.set_footer(text="Bot Created By alter#6000")
+                    embed.set_footer(text="Bot Created By ritz#8888")
 
                     await ctx.send(embed=embed)
 
@@ -201,7 +201,7 @@ class queuecommands(commands.Cog):
                     return await member.edit(nick=f"[{points}] {member.name}")
             except:
                 embed=discord.Embed(description=f"Failed to remove 5 points from {member.mention}",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created By ritz#8888")
 
                 return await ctx.send(embed=embed)
 
@@ -210,14 +210,14 @@ class queuecommands(commands.Cog):
     async def close(self,ctx):
         if ctx.channel.id not in qchannels:
             embed=discord.Embed(description=f"Channel is not a game channel.",color=discord.Color.red())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             return await ctx.send(embed=embed)
         else:
             qchannels.remove(ctx.channel.id)
 
             embed=discord.Embed(description=f"Deleting channel in a few seconds...",color=discord.Color.green())
-            embed.set_footer(text="Bot Created By alter#6000")
+            embed.set_footer(text="Bot Created By ritz#8888")
 
             await ctx.send(embed=embed)
 
@@ -227,7 +227,7 @@ class queuecommands(commands.Cog):
                 return await ctx.channel.delete()
             except:
                 embed=discord.Embed(description=f"Failed to delete game channel.",color=discord.Color.red())
-                embed.set_footer(text="Bot Created By alter#6000")
+                embed.set_footer(text="Bot Created ritz#8888")
 
                 return await ctx.send(embed=embed)
 
